@@ -31,7 +31,7 @@
     <redisson.version>3.20.0</redisson.version>
     <embedded.redis.version>0.7.3</embedded.redis.version>
     <aliyun.version>4.6.3</aliyun.version>
-    <leancloud.version>8.2.17</leancloud.version>
+    <leancloud.version>6.5.3</leancloud.version>
     <sendgrid.version>4.9.3</sendgrid.version>
     <greenmail.version>1.5.13</greenmail.version>
   </properties>
