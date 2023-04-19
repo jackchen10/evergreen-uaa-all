@@ -1,11 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import AUTH_API from "../services/auth.service";
-import IMOOC_API from "../services/imooc.service";
+import EVERGREEN_API from "../services/evergreen.service";
 import router from "../router";
 import UTIL from "@/core/util";
 import { usersModule } from "./modules/users.js";
 import { registerModule } from "./modules/register.js";
+import {EVERGREEN_AXIOS} from "../core/http-client/evergreen";
 
 Vue.use(Vuex);
 
@@ -98,7 +99,7 @@ export default new Vuex.Store({
         });
     },
     login: ({ commit }, { username, password, icode }) => {
-      IMOOC_API.verifyCode(icode).then((res) => {
+      EVERGREEN_API.verifyCode(icode).then((res) => {
         if (res.data.code === 1000) {
           AUTH_API.login(username, password)
             .then((res) => {

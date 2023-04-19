@@ -16,7 +16,7 @@
           </a-input>
         </a-form-model-item>
         <a-form-model-item has-feedback prop="icode">
-          <a-input v-model="model.icode" placeholder="在慕课网课程首页可以找到 icode">
+          <a-input v-model="model.icode" placeholder="找到 icode">
             <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
           </a-input>
         </a-form-model-item>
