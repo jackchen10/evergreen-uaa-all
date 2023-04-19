@@ -15,8 +15,8 @@ export const loginRules = {
   ],
   icode: [
     {
-      required: true,
-      message: "iCode为必填项！",
+      required: false,
+      message: "iCode为非必填项！",
       trigger: "blur",
     },
   ],

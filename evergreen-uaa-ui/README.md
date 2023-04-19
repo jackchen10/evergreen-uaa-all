@@ -1,4 +1,4 @@
-# uaa-ui
+# evergreen-uaa-ui
 
 ## Project setup
 ```

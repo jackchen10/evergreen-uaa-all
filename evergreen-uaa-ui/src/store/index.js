@@ -6,7 +6,7 @@ import router from "../router";
 import UTIL from "@/core/util";
 import { usersModule } from "./modules/users.js";
 import { registerModule } from "./modules/register.js";
-import {EVERGREEN_AXIOS} from "../core/http-client/evergreen";
+//import {EVERGREEN_AXIOS} from "../core/http-client/evergreen";
 
 Vue.use(Vuex);
 
