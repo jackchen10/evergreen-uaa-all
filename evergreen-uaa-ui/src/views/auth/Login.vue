@@ -59,23 +59,31 @@ export default {
   },
   methods: {
     submitForm(formName) {
+      console.log("formName->" + formName);
       this.$refs[formName].validate((valid) => {
+        console.log("valid->" + valid);
         if (valid) {
+          console.log("After validated, just execute login request");
           this.$store.dispatch("login", {
             username: this.model.username,
             password: this.model.password,
             icode: this.model.icode,
           });
+          console.log("After dispatch,username: " + this.model.username);
+          console.log("After dispatch,password: " + this.model.password);
+          console.log("---After dispatch login method---");
         }
       });
     },
     handleNavRegister() {
+      console.log("----handleNavRegister----");
       this.$router.push("/register");
     },
   },
   // 计算型属性
   computed: {
     loginError: function () {
+      console.log("----handleLoginError----,this.$store.state.loginErrMsg:  " + this.$store.state.loginErrMsg);
       return this.$store.state.loginErrMsg;
     },
   },

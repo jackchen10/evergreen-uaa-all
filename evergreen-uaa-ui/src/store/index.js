@@ -6,7 +6,7 @@ import router from "../router";
 import UTIL from "@/core/util";
 import { usersModule } from "./modules/users.js";
 import { registerModule } from "./modules/register.js";
-//import {EVERGREEN_AXIOS} from "../core/http-client/evergreen";
+// import {EVERGREEN_AXIOS} from "../core/http-client/evergreen";
 
 Vue.use(Vuex);
 
@@ -99,8 +99,14 @@ export default new Vuex.Store({
         });
     },
     login: ({ commit }, { username, password, icode }) => {
-      EVERGREEN_API.verifyCode(icode).then((res) => {
+      console.log("username:" + username + ",password:" + password + ",icode:" + icode);
+      let verifyRes = EVERGREEN_API.verifyCode(icode);
+      console.log("verify code result--->" + verifyRes);
+      verifyRes.then((res) => {
+        console.log("res***************的值：" + res);
+        console.log("res.data.code***************的值：" + res.data.code);
         if (res.data.code === 1000) {
+        // if (res.data.code === 'undefined' || res.data.code === undefined) {
           AUTH_API.login(username, password)
             .then((res) => {
               if (res.data) {
@@ -143,7 +149,7 @@ export default new Vuex.Store({
         } else {
           commit("loginFail", res.data.msg);
         }
-      });
+      })
     },
     reset: ({ commit }) => {
       commit("reset");

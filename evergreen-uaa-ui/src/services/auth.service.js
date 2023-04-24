@@ -3,6 +3,8 @@ import { AUTH_AXIOS } from "@/core/http-client/auth";
 export default {
   login(username, password) {
     const url = `/token`;
+    console.log("auth.service url-->" + url);
+    console.log("auth.service username-->" + username + ",auth.service password-->" + password);
     return AUTH_AXIOS.post(url, { username, password });
   },
   sendMfa(mfaId, mfaType) {

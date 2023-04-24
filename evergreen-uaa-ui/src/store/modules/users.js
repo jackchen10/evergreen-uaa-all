@@ -1,5 +1,6 @@
 import ADMIN_API from "@/services/admin.service";
 import UTIL from "@/core/util";
+// import {loginRules} from "@/views/form-rules/login";
 
 export const usersModule = {
   namespaced: true,
